@@ -13,7 +13,7 @@ count = 0
 while "*" in secret_word_list:
     count += 1
     smth = input()
-    if smth == secret_word:
+    if smth.lower() == secret_word.lower():
         break
     if smth in commands:
         count -= 1
@@ -23,9 +23,9 @@ while "*" in secret_word_list:
         print("Ошибка: вы ввели НЕ букву!")
         continue
     if len(smth) > 1:
-        print("Ошибка: вы ввели БОЛЬШЕ одной буквы!")
+        print("Ошибка: вы ввели БОЛЬШЕ одной буквы или введенное слово НЕ является правильным ответом!")
         continue
-    letter = smth
+    letter = smth.lower()
     if letter in letters_entered:
         print("Ошибка: вы уже вводили данную букву!")
         continue
